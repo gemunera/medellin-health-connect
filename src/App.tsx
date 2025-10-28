@@ -12,6 +12,7 @@ import Services from "./pages/Services";
 import Medellin from "./pages/Medellin";
 import Contact from "./pages/Contact";
 import PlasticSurgery from "./pages/services/PlasticSurgery";
+import Dental from "./pages/services/Dental";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -31,7 +32,7 @@ const App = () => (
                 <Route path="/about" element={<About />} />
                 <Route path="/services" element={<Services />} />
                 <Route path="/services/plastic-surgery" element={<PlasticSurgery />} />
-                <Route path="/services/dental" element={<PlasticSurgery />} />
+                <Route path="/services/dental" element={<Dental />} />
                 <Route path="/services/weight-management" element={<PlasticSurgery />} />
                 <Route path="/services/neurosurgery" element={<PlasticSurgery />} />
                 <Route path="/services/mainli" element={<PlasticSurgery />} />
