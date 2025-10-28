@@ -75,18 +75,12 @@ const PlasticSurgery = () => {
             {/* Description */}
             <div className="space-y-6 animate-fade-in">
               <h2 className="text-4xl font-heading font-bold text-foreground">
-                {t('Excelencia en Cirugía Estética', 'Excellence in Aesthetic Surgery')}
+                {t('Cirugía Plástica y Medicina Estética', 'Plastic Surgery and Aesthetic Medicine')}
               </h2>
               <p className="text-lg text-muted-foreground leading-relaxed">
                 {t(
-                  'Nuestros cirujanos plásticos certificados internacionalmente combinan arte y ciencia para brindarte resultados naturales y armoniosos. Utilizamos las técnicas más avanzadas y seguras en instalaciones de primer nivel.',
-                  'Our internationally certified plastic surgeons combine art and science to provide you with natural and harmonious results. We use the most advanced and safe techniques in first-class facilities.'
-                )}
-              </p>
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                {t(
-                  'Cada procedimiento es personalizado según tus necesidades y expectativas. Realizamos evaluaciones exhaustivas y te acompañamos desde la consulta inicial hasta tu completa recuperación.',
-                  'Each procedure is personalized according to your needs and expectations. We perform thorough evaluations and accompany you from the initial consultation to your complete recovery.'
+                  'Procedimientos realizados por especialistas certificados que buscan mejorar la apariencia y bienestar físico del paciente, manteniendo estándares internacionales de seguridad y ética médica. Incluye cirugías de contorno corporal, rejuvenecimiento facial, rinoplastia, liposucción, abdominoplastia, aumento o reducción mamaria, así como tratamientos no invasivos como bótox, rellenos dérmicos, láser facial y rejuvenecimiento con plasma rico en plaquetas.',
+                  'Procedures performed by certified specialists that seek to improve the appearance and physical well-being of the patient, maintaining international standards of safety and medical ethics. Includes body contouring surgeries, facial rejuvenation, rhinoplasty, liposuction, abdominoplasty, breast augmentation or reduction, as well as non-invasive treatments such as botox, dermal fillers, facial laser and platelet-rich plasma rejuvenation.'
                 )}
               </p>
             </div>
