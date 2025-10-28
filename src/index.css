@@ -17,11 +17,11 @@ All colors MUST be HSL.
     --popover: 0 0% 100%;
     --popover-foreground: 220 50% 15%;
 
-    --primary: 220 50% 25%;
+    --primary: 230 45% 28%;
     --primary-foreground: 0 0% 98%;
 
     --secondary: 200 80% 95%;
-    --secondary-foreground: 220 50% 25%;
+    --secondary-foreground: 230 45% 28%;
 
     --muted: 210 40% 96.1%;
     --muted-foreground: 220 20% 50%;
@@ -34,17 +34,17 @@ All colors MUST be HSL.
 
     --border: 220 20% 90%;
     --input: 220 20% 90%;
-    --ring: 220 50% 25%;
-
+    --ring: 230 45% 28%;
+    
     --radius: 0.5rem;
     
     /* Medical theme gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(220 50% 25%), hsl(220 60% 35%));
+    --gradient-hero: linear-gradient(135deg, hsl(230 45% 28%), hsl(230 50% 38%));
     --gradient-accent: linear-gradient(135deg, hsl(180 60% 50%), hsl(200 70% 60%));
     --gradient-subtle: linear-gradient(180deg, hsl(0 0% 100%), hsl(200 80% 98%));
     
     /* Shadows */
-    --shadow-medical: 0 10px 40px -15px hsl(220 50% 25% / 0.2);
+    --shadow-medical: 0 10px 40px -15px hsl(230 45% 28% / 0.2);
     --shadow-card: 0 4px 20px -5px hsl(220 50% 25% / 0.1);
     
     /* Transitions */
