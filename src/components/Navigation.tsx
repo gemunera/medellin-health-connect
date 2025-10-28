@@ -25,7 +25,7 @@ const Navigation = () => {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border shadow-sm">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-primary text-primary-foreground backdrop-blur-sm border-b border-primary-foreground/20 shadow-sm">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
           <Link to="/" className="flex items-center space-x-3 hover:opacity-80 transition-opacity">
@@ -38,10 +38,10 @@ const Navigation = () => {
               <Link
                 key={item.path}
                 to={item.path}
-                className={`text-sm font-medium transition-colors relative hover:text-primary ${
+                className={`text-sm font-medium transition-colors relative hover:text-accent ${
                   isActive(item.path) 
-                    ? 'text-primary after:absolute after:bottom-[-8px] after:left-0 after:right-0 after:h-0.5 after:bg-accent' 
-                    : 'text-muted-foreground'
+                    ? 'text-accent after:absolute after:bottom-[-8px] after:left-0 after:right-0 after:h-0.5 after:bg-accent' 
+                    : 'text-primary-foreground/90'
                 }`}
               >
                 {item.label}
@@ -64,7 +64,7 @@ const Navigation = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden p-2 rounded-lg hover:bg-muted transition-colors"
+            className="md:hidden p-2 rounded-lg hover:bg-primary-foreground/10 transition-colors text-primary-foreground"
             aria-label="Toggle menu"
           >
             {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -73,7 +73,7 @@ const Navigation = () => {
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className="md:hidden py-4 border-t border-border animate-fade-in">
+          <div className="md:hidden py-4 border-t border-primary-foreground/20 animate-fade-in">
             <div className="flex flex-col space-y-4">
               {navItems.map((item) => (
                 <Link
@@ -82,8 +82,8 @@ const Navigation = () => {
                   onClick={() => setIsOpen(false)}
                   className={`text-sm font-medium px-4 py-2 rounded-lg transition-colors ${
                     isActive(item.path)
-                      ? 'bg-secondary text-primary'
-                      : 'text-muted-foreground hover:bg-muted'
+                      ? 'bg-accent text-accent-foreground'
+                      : 'text-primary-foreground/90 hover:bg-primary-foreground/10'
                   }`}
                 >
                   {item.label}
