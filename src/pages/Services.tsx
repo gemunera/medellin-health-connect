@@ -1,136 +1,111 @@
-import { Link } from 'react-router-dom';
-import { ArrowRight } from 'lucide-react';
+import { useState } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/contexts/LanguageContext';
+import ServiceModal from '@/components/ServiceModal';
 import plasticSurgery from '@/assets/plastic-surgery.jpg';
 import dental from '@/assets/dental.jpg';
 import weightManagement from '@/assets/weight-management.jpg';
 import neurosurgery from '@/assets/neurosurgery.jpg';
 import rehabilitation from '@/assets/rehabilitation.jpg';
+import mainli1 from '@/assets/mainli-1.jpg';
+import mainli2 from '@/assets/mainli-2.jpg';
+import mainli3 from '@/assets/mainli-3.jpg';
+import mainli4 from '@/assets/mainli-4.jpg';
 
 const Services = () => {
   const { t } = useLanguage();
+  const [selectedService, setSelectedService] = useState<any>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const services = [
     {
       title: t('Cirugía Plástica y Medicina Estética', 'Plastic Surgery and Aesthetic Medicine'),
       description: t(
-        'Procedimientos estéticos avanzados realizados por cirujanos certificados con tecnología de última generación.',
-        'Advanced aesthetic procedures performed by board-certified surgeons with state-of-the-art technology.'
+        'Procedimientos estéticos avanzados realizados por cirujanos certificados.',
+        'Advanced aesthetic procedures performed by board-certified surgeons.'
+      ),
+      fullDescription: t(
+        'Procedimientos realizados por especialistas certificados que buscan mejorar la apariencia y bienestar físico del paciente, manteniendo estándares internacionales de seguridad y ética médica. Incluye cirugías de contorno corporal, rejuvenecimiento facial, rinoplastia, liposucción, abdominoplastia, aumento o reducción mamaria, así como tratamientos no invasivos como bótox, rellenos dérmicos, láser facial y rejuvenecimiento con plasma rico en plaquetas.',
+        'Procedures performed by certified specialists that seek to improve the appearance and physical well-being of the patient, maintaining international standards of safety and medical ethics. Includes body contouring surgeries, facial rejuvenation, rhinoplasty, liposuction, abdominoplasty, breast augmentation or reduction, as well as non-invasive treatments such as botox, dermal fillers, facial laser and platelet-rich plasma rejuvenation.'
       ),
       image: plasticSurgery,
-      link: '/services/plastic-surgery',
-      procedures: t(
-        'Rinoplastia, Liposucción, Aumento de senos, Lifting facial, BBL',
-        'Rhinoplasty, Liposuction, Breast augmentation, Facelift, BBL'
-      ),
     },
     {
       title: t('Odontología Integral y Estética', 'Comprehensive and Aesthetic Dentistry'),
       description: t(
-        'Tratamientos dentales completos desde odontología general hasta procedimientos cosméticos avanzados.',
-        'Complete dental treatments from general dentistry to advanced cosmetic procedures.'
+        'Servicios odontológicos de alta precisión con tecnología digital avanzada.',
+        'High-precision dental services with advanced digital technology.'
+      ),
+      fullDescription: t(
+        'Servicios odontológicos de alta precisión que combinan tecnología digital y diseño estético. Incluye ortodoncia, implantología, blanqueamiento, carillas, diseño de sonrisa, rehabilitación oral y tratamientos funcionales de la mordida. Todos los procedimientos son realizados por odontólogos especialistas con experiencia internacional, priorizando estética, funcionalidad y confort del paciente.',
+        'High-precision dental services that combine digital technology and aesthetic design. Includes orthodontics, implantology, whitening, veneers, smile design, oral rehabilitation and functional bite treatments. All procedures are performed by specialist dentists with international experience, prioritizing aesthetics, functionality and patient comfort.'
       ),
       image: dental,
-      link: '/services/dental',
-      procedures: t(
-        'Implantes, Carillas, Ortodoncia, Blanqueamiento, Rehabilitación oral',
-        'Implants, Veneers, Orthodontics, Whitening, Oral rehabilitation'
-      ),
     },
     {
       title: t('Tratamientos para la Obesidad', 'Obesity Treatments'),
       description: t(
-        'Programas integrales de control de peso incluyendo cirugía bariátrica y acompañamiento nutricional.',
-        'Comprehensive weight management programs including bariatric surgery and nutritional support.'
+        'Programa especial enfocado en una pérdida de peso segura y supervisada.',
+        'Special program focused on safe and supervised weight loss.'
+      ),
+      fullDescription: t(
+        'Programa especial enfocado en lograr una pérdida de peso segura, progresiva y supervisada por profesionales. Incluye acompañamiento médico, nutricional y orientación personalizada para cada paciente.',
+        'Special program focused on achieving safe, progressive and supervised weight loss by professionals. Includes medical, nutritional support and personalized guidance for each patient.'
       ),
       image: weightManagement,
-      link: '/services/weight-management',
-      procedures: t(
-        'Manga gástrica, Bypass gástrico, Balón gástrico, Programas nutricionales',
-        'Gastric sleeve, Gastric bypass, Gastric balloon, Nutritional programs'
-      ),
     },
     {
-      title: t('Neurocirugía Especializada', 'Specialized Neurosurgery'),
+      title: t('Rehabilitación Integral – Neurocirugía Especializada', 'Comprehensive Rehabilitation – Specialized Neurosurgery'),
       description: t(
-        'Intervenciones neuroquirúrgicas avanzadas con equipos de alta tecnología y especialistas experimentados.',
-        'Advanced neurosurgical interventions with high-tech equipment and experienced specialists.'
+        'Recuperación y mejora funcional mediante técnicas avanzadas.',
+        'Recovery and functional improvement through advanced techniques.'
       ),
-      image: neurosurgery,
-      link: '/services/neurosurgery',
-      procedures: t(
-        'Cirugía de columna, Tumores cerebrales, Epilepsia, Neurocirugía funcional',
-        'Spine surgery, Brain tumors, Epilepsy, Functional neurosurgery'
-      ),
-    },
-    {
-      title: t('Terapia MAINLI – Activación Neuronal', 'MAINLI Therapy – Neural Activation'),
-      description: t(
-        'Terapia innovadora para activación neuronal y mejora de función cognitiva y motora.',
-        'Innovative therapy for neural activation and improvement of cognitive and motor function.'
+      fullDescription: t(
+        'Servicio dirigido a la recuperación y mejora funcional de cada paciente mediante técnicas avanzadas en rehabilitación y supervisión de especialistas en neurocirugía. Facilita la movilidad, reduce el dolor y promueve una mejor calidad de vida.',
+        'Service aimed at the recovery and functional improvement of each patient through advanced rehabilitation techniques and supervision of specialists in neurosurgery. Facilitates mobility, reduces pain and promotes a better quality of life.'
       ),
       image: rehabilitation,
-      link: '/services/mainli',
-      procedures: t(
-        'Rehabilitación neurológica, Estimulación cognitiva, Terapia motora',
-        'Neurological rehabilitation, Cognitive stimulation, Motor therapy'
-      ),
-    },
-    {
-      title: t('Programa NEUROWAVES – Psilocibina', 'NEUROWAVES Program – Psilocybin'),
-      description: t(
-        'Tratamiento terapéutico asistido con psilocibina para salud mental y bienestar emocional.',
-        'Psilocybin-assisted therapeutic treatment for mental health and emotional well-being.'
-      ),
-      image: rehabilitation,
-      link: '/services/neurowaves',
-      procedures: t(
-        'Terapia para depresión, Ansiedad, TEPT, Crecimiento personal',
-        'Therapy for depression, Anxiety, PTSD, Personal growth'
-      ),
-    },
-    {
-      title: t('Rehabilitación Integral', 'Comprehensive Rehabilitation'),
-      description: t(
-        'Programas completos de rehabilitación física y neurológica con equipos multidisciplinarios.',
-        'Complete physical and neurological rehabilitation programs with multidisciplinary teams.'
-      ),
-      image: rehabilitation,
-      link: '/services/rehabilitation',
-      procedures: t(
-        'Fisioterapia, Terapia ocupacional, Rehabilitación neurológica, Ortopedia',
-        'Physical therapy, Occupational therapy, Neurological rehabilitation, Orthopedics'
-      ),
     },
     {
       title: t('Servicios Médicos Legales', 'Legal Medical Services'),
       description: t(
-        'Evaluaciones médicas especializadas para procesos legales y peritajes médico-legales.',
-        'Specialized medical evaluations for legal processes and medical-legal expert opinions.'
+        'Asesoría médica especializada para procesos legales.',
+        'Specialized medical advice for legal processes.'
+      ),
+      fullDescription: t(
+        'Asesoría médica especializada para procesos legales, documentación clínica, peritajes y certificaciones necesarias para respaldar casos jurídicos relacionados con salud y atención médica.',
+        'Specialized medical advice for legal processes, clinical documentation, expert opinions and certifications necessary to support legal cases related to health and medical care.'
       ),
       image: neurosurgery,
-      link: '/services/legal-medical',
-      procedures: t(
-        'Evaluaciones médicas, Peritajes, Informes médico-legales',
-        'Medical evaluations, Expert opinions, Medical-legal reports'
-      ),
     },
     {
-      title: t('Turismo Médico y Bienestar', 'Medical Tourism and Wellness'),
+      title: t('Terapia MAINLI – Activación Neuronal', 'MAINLI Therapy – Neural Activation'),
       description: t(
-        'Experiencia completa que combina atención médica de calidad con turismo en Medellín.',
-        'Complete experience combining quality medical care with tourism in Medellín.'
+        'Terapia orientada a estimular áreas específicas del sistema nervioso.',
+        'Therapy aimed at stimulating specific areas of the nervous system.'
       ),
-      image: plasticSurgery,
-      link: '/services/medical-tourism',
-      procedures: t(
-        'Coordinación completa, Alojamiento, Transporte, Tours, Acompañamiento',
-        'Complete coordination, Accommodation, Transportation, Tours, Accompaniment'
+      fullDescription: t(
+        'Terapia orientada a estimular áreas específicas del sistema nervioso para mejorar habilidades motoras, sensoriales y cognitivas.\n\nTambién se utiliza en procesos de acompañamiento a niños, brindando asesoramiento pediátrico y herramientas para apoyar su desarrollo mediante activación neuronal.',
+        'Therapy aimed at stimulating specific areas of the nervous system to improve motor, sensory and cognitive skills.\n\nIt is also used in children support processes, providing pediatric counseling and tools to support their development through neural activation.'
       ),
+      image: rehabilitation,
+      images: [mainli1, mainli2, mainli3, mainli4],
     },
   ];
+
+  const handleServiceClick = (service: any) => {
+    setSelectedService(service);
+    setIsModalOpen(true);
+  };
+
+  const whatsappNumber = '573218891061';
+  const whatsappMessage = encodeURIComponent(
+    t(
+      'Hola, estoy interesado en sus servicios médicos. ¿Podrían darme más información?',
+      'Hello, I am interested in your medical services. Could you give me more information?'
+    )
+  );
 
   return (
     <div className="flex flex-col pt-20">
@@ -168,18 +143,13 @@ const Services = () => {
                 <CardContent className="p-6 flex-1 flex flex-col">
                   <h3 className="text-2xl font-heading font-semibold mb-3">{service.title}</h3>
                   <p className="text-muted-foreground mb-4 flex-1">{service.description}</p>
-                  <div className="mb-4">
-                    <p className="text-sm font-medium text-accent mb-2">
-                      {t('Procedimientos:', 'Procedures:')}
-                    </p>
-                    <p className="text-sm text-muted-foreground">{service.procedures}</p>
-                  </div>
-                  <Link to={service.link}>
-                    <Button variant="ghost" className="text-accent hover:text-accent/80 p-0 w-full justify-start">
-                      {t('Ver Detalles', 'View Details')}
-                      <ArrowRight className="ml-2 h-4 w-4" />
-                    </Button>
-                  </Link>
+                  <Button 
+                    onClick={() => handleServiceClick(service)}
+                    variant="ghost" 
+                    className="text-accent hover:text-accent/80 p-0 w-full justify-start"
+                  >
+                    {t('Ver Detalles', 'View Details')}
+                  </Button>
                 </CardContent>
               </Card>
             ))}
@@ -195,18 +165,27 @@ const Services = () => {
           </h2>
           <p className="text-xl mb-8 max-w-2xl mx-auto opacity-90">
             {t(
-              'Nuestro equipo está listo para responder tus preguntas y ayudarte a elegir el servicio adecuado',
-              'Our team is ready to answer your questions and help you choose the right service'
+              'Nuestro equipo está listo para responder tus preguntas',
+              'Our team is ready to answer your questions'
             )}
           </p>
-          <Link to="/contact">
+          <a
+            href={`https://wa.me/${whatsappNumber}?text=${whatsappMessage}`}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <Button size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground text-lg px-10 py-6 rounded-full">
               {t('Contáctanos', 'Contact Us')}
-              <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
-          </Link>
+          </a>
         </div>
       </section>
+
+      <ServiceModal 
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        service={selectedService}
+      />
     </div>
   );
 };

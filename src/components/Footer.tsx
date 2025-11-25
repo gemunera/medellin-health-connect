@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Mail, Phone, MapPin, Facebook, Instagram, Linkedin } from 'lucide-react';
+import { MessageCircle, Instagram, MapPin } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import logo from '@/assets/logo.jpg';
 
@@ -35,10 +35,10 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Contact Miami */}
+          {/* Contact Info */}
           <div>
             <h3 className="font-heading font-semibold text-lg mb-4">
-              {t('Oficina Miami', 'Miami Office')}
+              {t('Ubicación', 'Location')}
             </h3>
             <ul className="space-y-3 text-sm">
               <li className="flex items-start space-x-2">
@@ -46,40 +46,35 @@ const Footer = () => {
                 <span>Miami, Florida, USA</span>
               </li>
               <li className="flex items-start space-x-2">
-                <Phone className="h-4 w-4 mt-0.5 flex-shrink-0" />
-                <span>+1 (305) XXX-XXXX</span>
-              </li>
-              <li className="flex items-start space-x-2">
-                <Mail className="h-4 w-4 mt-0.5 flex-shrink-0" />
-                <span>info@alliancehealthinstitute.com</span>
+                <MapPin className="h-4 w-4 mt-0.5 flex-shrink-0" />
+                <span>Medellín, Colombia</span>
               </li>
             </ul>
           </div>
 
-          {/* Contact Medellín */}
+          {/* Social Media */}
           <div>
             <h3 className="font-heading font-semibold text-lg mb-4">
-              {t('Oficina Medellín', 'Medellín Office')}
+              {t('Conecta con Nosotros', 'Connect With Us')}
             </h3>
-            <ul className="space-y-3 text-sm">
-              <li className="flex items-start space-x-2">
-                <MapPin className="h-4 w-4 mt-0.5 flex-shrink-0" />
-                <span>Medellín, Colombia</span>
-              </li>
-              <li className="flex items-start space-x-2">
-                <Phone className="h-4 w-4 mt-0.5 flex-shrink-0" />
-                <span>+57 XXX XXX XXXX</span>
-              </li>
-            </ul>
-            <div className="flex space-x-4 mt-6">
-              <a href="#" className="hover:text-accent transition-colors" aria-label="Facebook">
-                <Facebook className="h-5 w-5" />
+            <div className="flex space-x-4">
+              <a 
+                href="https://wa.me/573218891061" 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-accent transition-colors" 
+                aria-label="WhatsApp"
+              >
+                <MessageCircle className="h-6 w-6" />
               </a>
-              <a href="#" className="hover:text-accent transition-colors" aria-label="Instagram">
-                <Instagram className="h-5 w-5" />
-              </a>
-              <a href="#" className="hover:text-accent transition-colors" aria-label="LinkedIn">
-                <Linkedin className="h-5 w-5" />
+              <a 
+                href="https://instagram.com/alliancehealthmiami" 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-accent transition-colors" 
+                aria-label="Instagram"
+              >
+                <Instagram className="h-6 w-6" />
               </a>
             </div>
           </div>

@@ -56,9 +56,15 @@ const Navigation = () => {
               <Globe className="h-4 w-4" />
               <span className="font-medium">{language === 'es' ? 'EN' : 'ES'}</span>
             </Button>
-            <Button className="bg-accent hover:bg-accent/90 text-accent-foreground font-medium">
-              {t('Agendar Cita', 'Schedule Appointment')}
-            </Button>
+            <a 
+              href="https://wa.me/573218891061" 
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Button className="bg-accent hover:bg-accent/90 text-accent-foreground font-medium">
+                {t('Agendar Cita', 'Schedule Appointment')}
+              </Button>
+            </a>
           </div>
 
           {/* Mobile Menu Button */}
@@ -98,9 +104,16 @@ const Navigation = () => {
                 <Globe className="h-4 w-4" />
                 <span className="font-medium">{language === 'es' ? 'English' : 'Español'}</span>
               </Button>
-              <Button className="bg-accent hover:bg-accent/90 text-accent-foreground mx-4">
-                {t('Agendar Cita', 'Schedule Appointment')}
-              </Button>
+              <a 
+                href="https://wa.me/573218891061" 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mx-4"
+              >
+                <Button className="bg-accent hover:bg-accent/90 text-accent-foreground w-full">
+                  {t('Agendar Cita', 'Schedule Appointment')}
+                </Button>
+              </a>
             </div>
           </div>
         )}
