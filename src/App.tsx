@@ -6,13 +6,12 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import FloatingButtons from "@/components/FloatingButtons";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Services from "./pages/Services";
 import Medellin from "./pages/Medellin";
 import Contact from "./pages/Contact";
-import PlasticSurgery from "./pages/services/PlasticSurgery";
-import Dental from "./pages/services/Dental";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -31,15 +30,6 @@ const App = () => (
                 <Route path="/" element={<Home />} />
                 <Route path="/about" element={<About />} />
                 <Route path="/services" element={<Services />} />
-                <Route path="/services/plastic-surgery" element={<PlasticSurgery />} />
-                <Route path="/services/dental" element={<Dental />} />
-                <Route path="/services/weight-management" element={<PlasticSurgery />} />
-                <Route path="/services/neurosurgery" element={<PlasticSurgery />} />
-                <Route path="/services/mainli" element={<PlasticSurgery />} />
-                <Route path="/services/neurowaves" element={<PlasticSurgery />} />
-                <Route path="/services/rehabilitation" element={<PlasticSurgery />} />
-                <Route path="/services/legal-medical" element={<PlasticSurgery />} />
-                <Route path="/services/medical-tourism" element={<PlasticSurgery />} />
                 <Route path="/medellin" element={<Medellin />} />
                 <Route path="/contact" element={<Contact />} />
                 {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
@@ -47,6 +37,7 @@ const App = () => (
               </Routes>
             </main>
             <Footer />
+            <FloatingButtons />
           </div>
         </BrowserRouter>
       </TooltipProvider>

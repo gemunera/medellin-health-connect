@@ -103,12 +103,16 @@ const Home = () => {
               )}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Link to="/contact">
+              <a 
+                href="https://wa.me/573218891061" 
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <Button size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground text-lg px-8 py-6 rounded-full">
                   {t('Solicita Evaluación Gratuita', 'Request Free Evaluation')}
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
-              </Link>
+              </a>
               <Link to="/services">
                 <Button size="lg" variant="outline" className="text-lg px-8 py-6 rounded-full border-2 border-primary-foreground bg-primary-foreground/10 text-primary-foreground hover:bg-primary-foreground hover:text-primary backdrop-blur-sm">
                   {t('Explorar Servicios', 'Explore Services')}
@@ -211,12 +215,16 @@ const Home = () => {
               'Schedule your free evaluation with our team of coordinators'
             )}
           </p>
-          <Link to="/contact">
+          <a 
+            href="https://wa.me/573218891061" 
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <Button size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground text-lg px-10 py-6 rounded-full">
               {t('Contáctanos Ahora', 'Contact Us Now')}
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
-          </Link>
+          </a>
         </div>
       </section>
     </div>

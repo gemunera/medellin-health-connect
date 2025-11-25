@@ -1,65 +1,13 @@
-import { useState } from 'react';
-import { Mail, Phone, MapPin, Send, MessageCircle } from 'lucide-react';
+import { MessageCircle, MapPin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
-import { useToast } from '@/hooks/use-toast';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 const Contact = () => {
   const { t } = useLanguage();
-  const { toast } = useToast();
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    service: '',
-    message: '',
-  });
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    toast({
-      title: t('Mensaje Enviado', 'Message Sent'),
-      description: t(
-        'Gracias por contactarnos. Te responderemos pronto.',
-        'Thank you for contacting us. We will respond soon.'
-      ),
-    });
-    setFormData({ name: '', email: '', phone: '', service: '', message: '' });
-  };
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-
-  const contactInfo = [
-    {
-      icon: Phone,
-      title: t('Teléfono Miami', 'Miami Phone'),
-      value: '+1 (305) XXX-XXXX',
-      link: 'tel:+1305XXXXXXX',
-    },
-    {
-      icon: Mail,
-      title: t('Correo Electrónico', 'Email'),
-      value: 'info@alliancehealthinstitute.com',
-      link: 'mailto:info@alliancehealthinstitute.com',
-    },
-    {
-      icon: MapPin,
-      title: t('Ubicación', 'Location'),
-      value: 'Miami, Florida, USA',
-      link: null,
-    },
-    {
-      icon: MessageCircle,
-      title: 'WhatsApp',
-      value: '+1 (305) XXX-XXXX',
-      link: 'https://wa.me/1305XXXXXXX',
-    },
-  ];
+  const whatsappNumber = '573218891061';
+  const instagramHandle = 'alliancehealthmiami';
 
   return (
     <div className="flex flex-col pt-20">
@@ -83,160 +31,113 @@ const Contact = () => {
       {/* Contact Section */}
       <section className="py-20 bg-gradient-subtle">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
-            {/* Contact Form */}
-            <Card className="border-2 shadow-xl">
-              <CardContent className="p-8">
-                <h2 className="text-3xl font-heading font-bold mb-6">
-                  {t('Solicita tu Evaluación Gratuita', 'Request Your Free Evaluation')}
-                </h2>
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div>
-                    <label htmlFor="name" className="block text-sm font-medium mb-2">
-                      {t('Nombre Completo', 'Full Name')} *
-                    </label>
-                    <Input
-                      id="name"
-                      name="name"
-                      value={formData.name}
-                      onChange={handleChange}
-                      required
-                      placeholder={t('Juan Pérez', 'John Doe')}
-                      className="w-full"
-                    />
+          <div className="max-w-4xl mx-auto space-y-12">
+            {/* Contact Cards */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {/* WhatsApp Card */}
+              <Card className="border-2 shadow-xl hover:shadow-2xl transition-all duration-300">
+                <CardContent className="p-8 text-center space-y-6">
+                  <div className="mx-auto w-20 h-20 bg-[#25D366]/10 rounded-full flex items-center justify-center">
+                    <MessageCircle className="h-10 w-10 text-[#25D366]" />
                   </div>
                   <div>
-                    <label htmlFor="email" className="block text-sm font-medium mb-2">
-                      {t('Correo Electrónico', 'Email')} *
-                    </label>
-                    <Input
-                      id="email"
-                      name="email"
-                      type="email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      required
-                      placeholder="ejemplo@email.com"
-                      className="w-full"
-                    />
+                    <h2 className="text-2xl font-heading font-bold mb-3">
+                      WhatsApp
+                    </h2>
+                    <p className="text-muted-foreground mb-4">
+                      {t(
+                        'Chatea con nosotros directamente',
+                        'Chat with us directly'
+                      )}
+                    </p>
+                    <p className="text-xl font-semibold mb-6">
+                      +57 321 889 1061
+                    </p>
                   </div>
-                  <div>
-                    <label htmlFor="phone" className="block text-sm font-medium mb-2">
-                      {t('Teléfono', 'Phone')} *
-                    </label>
-                    <Input
-                      id="phone"
-                      name="phone"
-                      type="tel"
-                      value={formData.phone}
-                      onChange={handleChange}
-                      required
-                      placeholder="+1 (305) 123-4567"
-                      className="w-full"
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="service" className="block text-sm font-medium mb-2">
-                      {t('Servicio de Interés', 'Service of Interest')}
-                    </label>
-                    <Input
-                      id="service"
-                      name="service"
-                      value={formData.service}
-                      onChange={handleChange}
-                      placeholder={t('Ej: Cirugía Plástica', 'e.g., Plastic Surgery')}
-                      className="w-full"
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="message" className="block text-sm font-medium mb-2">
-                      {t('Mensaje', 'Message')} *
-                    </label>
-                    <Textarea
-                      id="message"
-                      name="message"
-                      value={formData.message}
-                      onChange={handleChange}
-                      required
-                      rows={5}
-                      placeholder={t('Cuéntanos sobre tu consulta...', 'Tell us about your inquiry...')}
-                      className="w-full"
-                    />
-                  </div>
-                  <Button
-                    type="submit"
-                    size="lg"
-                    className="w-full bg-accent hover:bg-accent/90 text-accent-foreground"
+                  <a
+                    href={`https://wa.me/${whatsappNumber}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
-                    {t('Enviar Mensaje', 'Send Message')}
-                    <Send className="ml-2 h-5 w-5" />
-                  </Button>
-                </form>
+                    <Button size="lg" className="w-full bg-[#25D366] hover:bg-[#128C7E] text-white">
+                      {t('Abrir WhatsApp', 'Open WhatsApp')}
+                    </Button>
+                  </a>
+                </CardContent>
+              </Card>
+
+              {/* Instagram Card */}
+              <Card className="border-2 shadow-xl hover:shadow-2xl transition-all duration-300">
+                <CardContent className="p-8 text-center space-y-6">
+                  <div className="mx-auto w-20 h-20 bg-gradient-to-br from-[#833AB4] via-[#E1306C] to-[#F56040] rounded-full flex items-center justify-center">
+                    <MessageCircle className="h-10 w-10 text-white" />
+                  </div>
+                  <div>
+                    <h2 className="text-2xl font-heading font-bold mb-3">
+                      Instagram
+                    </h2>
+                    <p className="text-muted-foreground mb-4">
+                      {t(
+                        'Síguenos y envía mensajes',
+                        'Follow us and send messages'
+                      )}
+                    </p>
+                    <p className="text-xl font-semibold mb-6">
+                      @{instagramHandle}
+                    </p>
+                  </div>
+                  <a
+                    href={`https://instagram.com/${instagramHandle}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Button size="lg" className="w-full bg-gradient-to-br from-[#833AB4] via-[#E1306C] to-[#F56040] hover:opacity-90 text-white">
+                      {t('Ir a Instagram', 'Go to Instagram')}
+                    </Button>
+                  </a>
+                </CardContent>
+              </Card>
+            </div>
+
+            {/* Info Section */}
+            <Card className="border-2 bg-primary text-primary-foreground">
+              <CardContent className="p-8">
+                <h3 className="text-2xl font-heading font-semibold mb-6 text-center">
+                  {t('Información de Ubicación', 'Location Information')}
+                </h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div className="flex items-start space-x-3">
+                    <MapPin className="h-6 w-6 flex-shrink-0 mt-1" />
+                    <div>
+                      <p className="font-semibold mb-1">Miami, Florida</p>
+                      <p className="opacity-90">United States</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-3">
+                    <MapPin className="h-6 w-6 flex-shrink-0 mt-1" />
+                    <div>
+                      <p className="font-semibold mb-1">Medellín</p>
+                      <p className="opacity-90">Colombia</p>
+                    </div>
+                  </div>
+                </div>
               </CardContent>
             </Card>
 
-            {/* Contact Information */}
-            <div className="space-y-8">
-              <div>
-                <h2 className="text-3xl font-heading font-bold mb-6">
-                  {t('Información de Contacto', 'Contact Information')}
-                </h2>
-                <p className="text-lg text-muted-foreground mb-8">
-                  {t(
-                    'Nuestro equipo bilingüe está disponible para atenderte y responder todas tus preguntas.',
-                    'Our bilingual team is available to serve you and answer all your questions.'
-                  )}
-                </p>
-              </div>
-
-              <div className="grid grid-cols-1 gap-6">
-                {contactInfo.map((info, index) => (
-                  <Card key={index} className="border-2 hover:shadow-lg transition-all duration-300">
-                    <CardContent className="p-6">
-                      <div className="flex items-start space-x-4">
-                        <div className="p-3 bg-accent/10 rounded-full">
-                          <info.icon className="h-6 w-6 text-accent" />
-                        </div>
-                        <div>
-                          <h3 className="font-semibold text-lg mb-1">{info.title}</h3>
-                          {info.link ? (
-                            <a
-                              href={info.link}
-                              className="text-muted-foreground hover:text-accent transition-colors"
-                            >
-                              {info.value}
-                            </a>
-                          ) : (
-                            <p className="text-muted-foreground">{info.value}</p>
-                          )}
-                        </div>
-                      </div>
-                    </CardContent>
-                  </Card>
-                ))}
-              </div>
-
-              <Card className="border-2 bg-primary text-primary-foreground">
-                <CardContent className="p-6">
-                  <h3 className="text-xl font-heading font-semibold mb-4">
-                    {t('Horario de Atención', 'Office Hours')}
-                  </h3>
-                  <div className="space-y-2">
-                    <p className="flex justify-between">
-                      <span>{t('Lunes - Viernes:', 'Monday - Friday:')}</span>
-                      <span>9:00 AM - 6:00 PM EST</span>
-                    </p>
-                    <p className="flex justify-between">
-                      <span>{t('Sábado:', 'Saturday:')}</span>
-                      <span>10:00 AM - 2:00 PM EST</span>
-                    </p>
-                    <p className="flex justify-between">
-                      <span>{t('Domingo:', 'Sunday:')}</span>
-                      <span>{t('Cerrado', 'Closed')}</span>
-                    </p>
-                  </div>
-                </CardContent>
-              </Card>
+            {/* Call to Action */}
+            <div className="text-center space-y-4">
+              <h3 className="text-3xl font-heading font-bold">
+                {t(
+                  '¿Listo para Comenzar tu Viaje Médico?',
+                  'Ready to Start Your Medical Journey?'
+                )}
+              </h3>
+              <p className="text-xl text-muted-foreground">
+                {t(
+                  'Nuestro equipo bilingüe está disponible para atenderte',
+                  'Our bilingual team is available to serve you'
+                )}
+              </p>
             </div>
           </div>
         </div>
