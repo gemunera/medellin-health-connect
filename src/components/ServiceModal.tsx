@@ -2,6 +2,13 @@ import { X } from 'lucide-react';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/contexts/LanguageContext';
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from '@/components/ui/carousel';
 
 interface ServiceModalProps {
   isOpen: boolean;
@@ -35,27 +42,33 @@ const ServiceModal = ({ isOpen, onClose, service }: ServiceModalProps) => {
         
         <div className="space-y-6">
           {/* Main Image */}
-          <div className="relative h-80 rounded-xl overflow-hidden">
+          <div className="relative h-96 rounded-xl overflow-hidden bg-muted flex items-center justify-center">
             <img
               src={service.image}
               alt={service.title}
-              className="w-full h-full object-cover"
+              className="w-full h-full object-contain"
             />
           </div>
 
-          {/* Additional Images Gallery */}
+          {/* Image Carousel */}
           {service.images && service.images.length > 0 && (
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              {service.images.map((img, index) => (
-                <div key={index} className="relative h-32 rounded-lg overflow-hidden">
-                  <img
-                    src={img}
-                    alt={`${service.title} ${index + 1}`}
-                    className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
-                  />
-                </div>
-              ))}
-            </div>
+            <Carousel className="w-full">
+              <CarouselContent>
+                {service.images.map((img, index) => (
+                  <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
+                    <div className="relative h-64 rounded-lg overflow-hidden bg-muted flex items-center justify-center">
+                      <img
+                        src={img}
+                        alt={`${service.title} ${index + 1}`}
+                        className="w-full h-full object-contain hover:scale-105 transition-transform duration-300"
+                      />
+                    </div>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <CarouselPrevious className="left-2" />
+              <CarouselNext className="right-2" />
+            </Carousel>
           )}
 
           {/* Description */}
