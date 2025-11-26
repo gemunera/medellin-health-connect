@@ -12,6 +12,12 @@ import mainli1 from '@/assets/mainli-1.jpg';
 import mainli2 from '@/assets/mainli-2.jpg';
 import mainli3 from '@/assets/mainli-3.jpg';
 import mainli4 from '@/assets/mainli-4.jpg';
+import mainli5 from '@/assets/mainli-5.jpg';
+import mainli6 from '@/assets/mainli-6.jpg';
+import mainli7 from '@/assets/mainli-7.jpg';
+import mainli8 from '@/assets/mainli-8.jpg';
+import mainli9 from '@/assets/mainli-9.jpg';
+import mainli10 from '@/assets/mainli-10.jpg';
 
 const Services = () => {
   const { t } = useLanguage();
@@ -90,7 +96,7 @@ const Services = () => {
         'Therapy aimed at stimulating specific areas of the nervous system to improve motor, sensory and cognitive skills.\n\nIt is also used in children support processes, providing pediatric counseling and tools to support their development through neural activation.'
       ),
       image: mainli1,
-      images: [mainli1, mainli2, mainli3, mainli4],
+      images: [mainli1, mainli2, mainli3, mainli4, mainli5, mainli6, mainli7, mainli8, mainli9, mainli10],
     },
   ];
 
