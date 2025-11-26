@@ -104,7 +104,7 @@ const Home = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <a 
-                href="https://wa.me/573218891061" 
+                href="https://wa.me/573014543800" 
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -216,7 +216,7 @@ const Home = () => {
             )}
           </p>
           <a 
-            href="https://wa.me/573218891061" 
+            href="https://wa.me/573014543800" 
             target="_blank"
             rel="noopener noreferrer"
           >

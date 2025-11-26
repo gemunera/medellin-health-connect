@@ -6,7 +6,7 @@ import { useLanguage } from '@/contexts/LanguageContext';
 const Contact = () => {
   const { t } = useLanguage();
 
-  const whatsappNumber = '573218891061';
+  const whatsappNumber = '573014543800';
   const instagramHandle = 'alliancehealthmiami';
 
   return (
@@ -51,7 +51,7 @@ const Contact = () => {
                       )}
                     </p>
                     <p className="text-xl font-semibold mb-6">
-                      +57 321 889 1061
+                      +57 301 454 3800
                     </p>
                   </div>
                   <a
@@ -103,21 +103,32 @@ const Contact = () => {
             <Card className="border-2 bg-primary text-primary-foreground">
               <CardContent className="p-8">
                 <h3 className="text-2xl font-heading font-semibold mb-6 text-center">
-                  {t('Información de Ubicación', 'Location Information')}
+                  {t('Información de Contacto', 'Contact Information')}
                 </h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="space-y-6">
                   <div className="flex items-start space-x-3">
                     <MapPin className="h-6 w-6 flex-shrink-0 mt-1" />
                     <div>
-                      <p className="font-semibold mb-1">Miami, Florida</p>
-                      <p className="opacity-90">United States</p>
+                      <p className="font-semibold mb-1">{t('Dirección en Miami', 'Miami Address')}</p>
+                      <a 
+                        href="https://www.google.com/maps/search/?api=1&query=2S+Biscayne+Boulevard+Suite+3200+Miami+Florida+USA"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="opacity-90 hover:opacity-100 transition-opacity underline"
+                      >
+                        2S Biscayne Bulevard Suite 3200 #5242, 3131<br />
+                        Miami Florida - Estados Unidos
+                      </a>
                     </div>
                   </div>
-                  <div className="flex items-start space-x-3">
-                    <MapPin className="h-6 w-6 flex-shrink-0 mt-1" />
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-4 border-t border-primary-foreground/20">
                     <div>
-                      <p className="font-semibold mb-1">Medellín</p>
-                      <p className="opacity-90">Colombia</p>
+                      <p className="font-semibold mb-1">WhatsApp</p>
+                      <p className="opacity-90">+57 301 454 3800</p>
+                    </div>
+                    <div>
+                      <p className="font-semibold mb-1">{t('Teléfono', 'Phone')}</p>
+                      <p className="opacity-90">+1 678 209 1035</p>
                     </div>
                   </div>
                 </div>
