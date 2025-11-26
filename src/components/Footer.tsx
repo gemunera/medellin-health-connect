@@ -12,7 +12,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Logo and Description */}
           <div className="space-y-4">
-            <img src={logo} alt="Alliance Health Institute" className="h-16 w-auto" />
+            <img src={logo} alt="Alliance Health Institute" className="h-24 w-auto" />
             <p className="text-sm opacity-90">
               {t(
                 'Conectamos pacientes de Estados Unidos con servicios médicos de clase mundial en Medellín, Colombia.',
