@@ -2,7 +2,7 @@ import { Instagram } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const FloatingButtons = () => {
-  const whatsappNumber = '573218891061';
+  const whatsappNumber = '573014543800';
   const instagramHandle = 'alliancehealthmiami';
 
   return (

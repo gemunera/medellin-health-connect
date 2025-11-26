@@ -29,7 +29,7 @@ const Navigation = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
           <Link to="/" className="flex items-center space-x-3 hover:opacity-80 transition-opacity">
-            <img src={logo} alt="Alliance Health Institute" className="h-12 w-auto" />
+            <img src={logo} alt="Alliance Health Institute" className="h-16 w-auto" />
           </Link>
 
           {/* Desktop Navigation */}
@@ -57,7 +57,7 @@ const Navigation = () => {
               <span className="font-medium">{language === 'es' ? 'EN' : 'ES'}</span>
             </Button>
             <a 
-              href="https://wa.me/573218891061" 
+              href="https://wa.me/573014543800" 
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -105,7 +105,7 @@ const Navigation = () => {
                 <span className="font-medium">{language === 'es' ? 'English' : 'Español'}</span>
               </Button>
               <a 
-                href="https://wa.me/573218891061" 
+                href="https://wa.me/573014543800" 
                 target="_blank"
                 rel="noopener noreferrer"
                 className="mx-4"

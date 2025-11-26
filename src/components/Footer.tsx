@@ -38,16 +38,26 @@ const Footer = () => {
           {/* Contact Info */}
           <div>
             <h3 className="font-heading font-semibold text-lg mb-4">
-              {t('Ubicación', 'Location')}
+              {t('Contacto', 'Contact')}
             </h3>
             <ul className="space-y-3 text-sm">
               <li className="flex items-start space-x-2">
                 <MapPin className="h-4 w-4 mt-0.5 flex-shrink-0" />
-                <span>Miami, Florida, USA</span>
+                <a 
+                  href="https://www.google.com/maps/search/?api=1&query=2S+Biscayne+Boulevard+Suite+3200+Miami+Florida+USA"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-accent transition-colors"
+                >
+                  2S Biscayne Bulevard Suite 3200 #5242, 3131<br />
+                  Miami Florida - Estados Unidos
+                </a>
               </li>
-              <li className="flex items-start space-x-2">
-                <MapPin className="h-4 w-4 mt-0.5 flex-shrink-0" />
-                <span>Medellín, Colombia</span>
+              <li className="text-sm">
+                <strong>{t('WhatsApp:', 'WhatsApp:')}</strong> +57 301 454 3800
+              </li>
+              <li className="text-sm">
+                <strong>{t('Teléfono:', 'Phone:')}</strong> +1 678 209 1035
               </li>
             </ul>
           </div>
@@ -59,7 +69,7 @@ const Footer = () => {
             </h3>
             <div className="flex space-x-4">
               <a 
-                href="https://wa.me/573218891061" 
+                href="https://wa.me/573014543800" 
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-accent transition-colors" 
