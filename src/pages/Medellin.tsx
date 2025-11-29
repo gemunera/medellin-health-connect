@@ -1,7 +1,7 @@
 import { CheckCircle2, Plane, Hotel, Shield, Stethoscope, DollarSign } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { useLanguage } from '@/contexts/LanguageContext';
-import medellinCity from '@/assets/medellin-city.jpg';
+import medellinCity from '@/assets/medellin2.avif';
 
 const Medellin = () => {
   const { t } = useLanguage();

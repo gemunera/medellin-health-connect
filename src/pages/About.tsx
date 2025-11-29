@@ -1,7 +1,7 @@
 import { CheckCircle2, Globe, Heart, Target } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { useLanguage } from '@/contexts/LanguageContext';
-import medellinCity from '@/assets/medellin-city.jpg';
+import torreMedica from '@/assets/torre_medica.jpg';
 
 const About = () => {
   const { t } = useLanguage();
@@ -84,8 +84,8 @@ const About = () => {
             </div>
             <div className="relative h-[500px] rounded-2xl overflow-hidden shadow-2xl animate-scale-in">
               <img
-                src={medellinCity}
-                alt="Medellín City"
+                src={torreMedica}
+                alt="Torre Médica"
                 className="w-full h-full object-cover"
               />
             </div>
