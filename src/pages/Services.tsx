@@ -8,6 +8,7 @@ import dental from '@/assets/dental.jpg';
 import weightManagement from '@/assets/weight-management.jpg';
 import neurosurgery from '@/assets/neurosurgery.jpg';
 import rehabilitation from '@/assets/rehabilitation.jpg';
+import medicalExpertReports from '@/assets/medical-expert-reports.jpg';
 import mainli1 from '@/assets/mainli-1.jpg';
 import mainli2 from '@/assets/mainli-2.jpg';
 import mainli3 from '@/assets/mainli-3.jpg';
@@ -166,6 +167,48 @@ const Services = () => {
 • Permanent channel for guidance, psychological first aid and referral to specialized services.`
       ),
       image: socialAssistance,
+    },
+    {
+      title: t('Informes Médicos Periciales y Valoración de Daños', 'Medical Expert Reports and Damage Assessment'),
+      description: t(
+        'Centro médico especializado en la elaboración de informes periciales de alta precisión.',
+        'Medical center specialized in the preparation of high-precision expert reports.'
+      ),
+      fullDescription: t(
+        `Somos un centro médico especializado en la elaboración de informes periciales de alta precisión, fundamentales para respaldar reclamaciones y procesos legales relacionados con:
+
+• Accidentes de tránsito
+• Accidentes laborales
+• Responsabilidad médico-sanitaria
+• Lesiones neurológicas
+• Lesiones del sistema musculoesquelético
+
+**✓ Revisión del caso gratuita.**
+
+**Características del servicio pericial:**
+• Valoraciones realizadas por especialistas en neurociencias, medicina del dolor, medicina laboral, medicina física y rehabilitación, psicología y neuropsicología.
+• Aplicación de protocolos internacionales como AMA Guides y ICF/OMS.
+• Pruebas neurocognitivas y neurofuncionales con equipos de última tecnología.
+• Informes con validez jurídica para procesos administrativos, aseguradoras y litigios complejos.
+• Participación de expertos como peritos en audiencias cuando sea requerido.`,
+        `We are a medical center specialized in the preparation of high-precision expert reports, essential for supporting claims and legal processes related to:
+
+• Traffic accidents
+• Workplace accidents
+• Medical-healthcare liability
+• Neurological injuries
+• Musculoskeletal system injuries
+
+**✓ Free case review.**
+
+**Expert service features:**
+• Assessments performed by specialists in neuroscience, pain medicine, occupational medicine, physical medicine and rehabilitation, psychology and neuropsychology.
+• Application of international protocols such as AMA Guides and ICF/WHO.
+• Neurocognitive and neurofunctional tests with state-of-the-art equipment.
+• Reports with legal validity for administrative processes, insurers and complex litigation.
+• Participation of experts as expert witnesses in hearings when required.`
+      ),
+      image: medicalExpertReports,
     },
   ];
 
