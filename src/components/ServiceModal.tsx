@@ -27,6 +27,26 @@ const ServiceModal = ({ isOpen, onClose, service }: ServiceModalProps) => {
   if (!service) return null;
 
   const whatsappNumber = '573218891061';
+
+  // Simple markdown-like parser for bold text and formatting
+  const formatDescription = (text: string) => {
+    return text.split('\n').map((line, index) => {
+      // Replace **text** with bold
+      const formattedLine = line.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+      
+      // Check if it's a bullet point
+      const isBullet = line.trim().startsWith('•') || line.trim().startsWith('–');
+      const isSubBullet = line.trim().startsWith('–');
+      
+      return (
+        <span 
+          key={index} 
+          className={`block ${isBullet ? 'ml-4' : ''} ${isSubBullet ? 'ml-8' : ''}`}
+          dangerouslySetInnerHTML={{ __html: formattedLine || '&nbsp;' }}
+        />
+      );
+    });
+  };
   const whatsappMessage = encodeURIComponent(
     `Hola, estoy interesado en ${service.title}. ¿Podrían darme más información?`
   );
@@ -73,9 +93,9 @@ const ServiceModal = ({ isOpen, onClose, service }: ServiceModalProps) => {
 
           {/* Description */}
           <div className="prose max-w-none">
-            <p className="text-lg text-muted-foreground leading-relaxed whitespace-pre-line">
-              {service.fullDescription}
-            </p>
+            <div className="text-lg text-muted-foreground leading-relaxed">
+              {formatDescription(service.fullDescription)}
+            </div>
           </div>
 
           {/* CTA Button */}

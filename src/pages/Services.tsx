@@ -18,6 +18,7 @@ import mainli7 from '@/assets/mainli-7.jpg';
 import mainli8 from '@/assets/mainli-8.jpg';
 import mainli9 from '@/assets/mainli-9.jpg';
 import mainli10 from '@/assets/mainli-10.jpg';
+import socialAssistance from '@/assets/social-assistance.jpg';
 
 const Services = () => {
   const { t } = useLanguage();
@@ -97,6 +98,74 @@ const Services = () => {
       ),
       image: mainli1,
       images: [mainli1, mainli2, mainli3, mainli4, mainli5, mainli6, mainli7, mainli8, mainli9, mainli10],
+    },
+    {
+      title: t('Asistencia Social Integral para la Comunidad Hispana en Miami', 'Comprehensive Social Assistance for the Hispanic Community in Miami'),
+      description: t(
+        'Orientación, intervención y acompañamiento en problemáticas psicosociales, jurídicas y migratorias.',
+        'Guidance, intervention and support in psychosocial, legal and immigration issues.'
+      ),
+      fullDescription: t(
+        `Brindamos un servicio especializado de orientación, intervención y acompañamiento en problemáticas psicosociales, jurídicas y migratorias que afectan a la población colombiana residente o en tránsito en Florida.
+
+**Componentes del servicio:**
+
+**a. Asesoría Jurídica Especializada**
+• Atención por profesionales en Derecho titulados en Colombia y con conocimiento operativo del marco legal estadounidense.
+• Restitución internacional de menores (Convenio Colombia).
+• Homologación de sentencias internacionales (Convenio Colombia).
+• Trámite internacional de matrimonio y UMH (Convenio Colombia).
+• Orientación jurídica en casos de:
+  – Vulneración de derechos familiares, laborales y civiles.
+  – Situaciones migratorias complejas.
+  – Procesos de repatriación y búsqueda de personas.
+  – Asesoría para trámites, conciliaciones y documentación.
+• Acompañamiento en la interpretación de normativas binacionales cuando aplique.
+
+**b. Atención Psicológica y Psicosocial**
+• Intervención clínica y psicosocial en crisis, duelo migratorio, violencia intrafamiliar, estrés postraumático y situaciones de vulnerabilidad.
+• Modelos de intervención basados en enfoques cognitivo-conductuales, trauma informado y neuropsicología clínica.
+• Diseño e implementación de planes de restablecimiento emocional y reintegración social.
+
+**c. Formación y Capacitación Comunitaria**
+• Programas certificados para líderes comunitarios en:
+  – Derechos Humanos (DD. HH.) y Derecho Internacional Humanitario (DIH).
+  – Herramientas de apoyo psicosocial y acompañamiento comunitario.
+• Campañas de sensibilización en prevención de violencia, salud mental y convivencia.
+
+**d. Línea de Atención Social**
+• Canal permanente para orientación, primeros auxilios psicológicos y direccionamiento a servicios especializados.`,
+        `We provide a specialized service of guidance, intervention and support in psychosocial, legal and immigration issues that affect the Colombian population residing or in transit in Florida.
+
+**Service Components:**
+
+**a. Specialized Legal Advice**
+• Attention by legal professionals graduated in Colombia with operational knowledge of the US legal framework.
+• International restitution of minors (Colombia Agreement).
+• Homologation of international sentences (Colombia Agreement).
+• International marriage and UMH procedures (Colombia Agreement).
+• Legal guidance in cases of:
+  – Violation of family, labor and civil rights.
+  – Complex immigration situations.
+  – Repatriation processes and people search.
+  – Advice for procedures, conciliations and documentation.
+• Support in the interpretation of binational regulations when applicable.
+
+**b. Psychological and Psychosocial Care**
+• Clinical and psychosocial intervention in crisis, migratory grief, domestic violence, post-traumatic stress and vulnerability situations.
+• Intervention models based on cognitive-behavioral approaches, trauma-informed care and clinical neuropsychology.
+• Design and implementation of emotional restoration and social reintegration plans.
+
+**c. Community Training and Capacity Building**
+• Certified programs for community leaders in:
+  – Human Rights (HR) and International Humanitarian Law (IHL).
+  – Psychosocial support tools and community accompaniment.
+• Awareness campaigns on violence prevention, mental health and coexistence.
+
+**d. Social Assistance Hotline**
+• Permanent channel for guidance, psychological first aid and referral to specialized services.`
+      ),
+      image: socialAssistance,
     },
   ];
 
