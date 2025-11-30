@@ -28,20 +28,36 @@ const ServiceModal = ({ isOpen, onClose, service }: ServiceModalProps) => {
 
   const whatsappNumber = '573218891061';
 
-  // Simple markdown-like parser for bold text and formatting
+  // Enhanced markdown-like parser for bold text and formatting
   const formatDescription = (text: string) => {
     return text.split('\n').map((line, index) => {
       // Replace **text** with bold
-      const formattedLine = line.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+      const formattedLine = line.replace(/\*\*(.*?)\*\*/g, '<strong class="text-foreground font-semibold">$1</strong>');
       
-      // Check if it's a bullet point
-      const isBullet = line.trim().startsWith('•') || line.trim().startsWith('–');
+      // Check line type for styling
+      const isBullet = line.trim().startsWith('•');
       const isSubBullet = line.trim().startsWith('–');
+      const isHeader = line.trim().startsWith('**') && line.trim().endsWith('**');
+      const isEmpty = line.trim() === '';
+      
+      // Determine classes based on line type
+      let className = 'block ';
+      if (isEmpty) {
+        className += 'h-3';
+      } else if (isHeader) {
+        className += 'mt-4 mb-2 text-foreground';
+      } else if (isSubBullet) {
+        className += 'ml-8 py-0.5 text-muted-foreground';
+      } else if (isBullet) {
+        className += 'ml-4 py-0.5 text-muted-foreground';
+      } else {
+        className += 'py-1';
+      }
       
       return (
         <span 
           key={index} 
-          className={`block ${isBullet ? 'ml-4' : ''} ${isSubBullet ? 'ml-8' : ''}`}
+          className={className}
           dangerouslySetInnerHTML={{ __html: formattedLine || '&nbsp;' }}
         />
       );
