@@ -77,35 +77,35 @@ const ServiceModal = ({ isOpen, onClose, service }: ServiceModalProps) => {
         </DialogHeader>
         
         <div className="space-y-6">
-          {/* Main Image */}
-          <div className="relative h-96 rounded-xl overflow-hidden bg-muted flex items-center justify-center">
-            <img
-              src={service.image}
-              alt={service.title}
-              className="w-full h-full object-contain"
-            />
-          </div>
-
-          {/* Image Carousel */}
-          {service.images && service.images.length > 0 && (
-            <Carousel className="w-full">
-              <CarouselContent>
-                {service.images.map((img, index) => (
-                  <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
-                    <div className="relative h-64 rounded-lg overflow-hidden bg-muted flex items-center justify-center">
-                      <img
-                        src={img}
-                        alt={`${service.title} ${index + 1}`}
-                        className="w-full h-full object-contain hover:scale-105 transition-transform duration-300"
-                      />
-                    </div>
-                  </CarouselItem>
-                ))}
-              </CarouselContent>
-              <CarouselPrevious className="left-2" />
-              <CarouselNext className="right-2" />
-            </Carousel>
-          )}
+          {/* Single Fluid Image Carousel */}
+          <Carousel className="w-full" opts={{ loop: true }}>
+            <CarouselContent>
+              {/* Main image first */}
+              <CarouselItem>
+                <div className="relative h-80 rounded-xl overflow-hidden bg-muted flex items-center justify-center">
+                  <img
+                    src={service.image}
+                    alt={service.title}
+                    className="w-full h-full object-contain"
+                  />
+                </div>
+              </CarouselItem>
+              {/* Additional images */}
+              {service.images?.map((img, index) => (
+                <CarouselItem key={index}>
+                  <div className="relative h-80 rounded-xl overflow-hidden bg-muted flex items-center justify-center">
+                    <img
+                      src={img}
+                      alt={`${service.title} ${index + 1}`}
+                      className="w-full h-full object-contain"
+                    />
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious className="left-2" />
+            <CarouselNext className="right-2" />
+          </Carousel>
 
           {/* Description */}
           <div className="prose max-w-none">
