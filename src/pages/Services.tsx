@@ -19,6 +19,7 @@ import mainli7 from '@/assets/mainli-7.jpg';
 import mainli8 from '@/assets/mainli-8.jpg';
 import mainli9 from '@/assets/mainli-9.jpg';
 import mainli10 from '@/assets/mainli-10.jpg';
+import mainliCover from '@/assets/mainli-cover.jpg';
 import socialAssistance from '@/assets/social-assistance.jpg';
 
 const Services = () => {
@@ -97,7 +98,7 @@ const Services = () => {
         'Terapia orientada a estimular áreas específicas del sistema nervioso para mejorar habilidades motoras, sensoriales y cognitivas.\n\nTambién se utiliza en procesos de acompañamiento a niños, brindando asesoramiento pediátrico y herramientas para apoyar su desarrollo mediante activación neuronal.',
         'Therapy aimed at stimulating specific areas of the nervous system to improve motor, sensory and cognitive skills.\n\nIt is also used in children support processes, providing pediatric counseling and tools to support their development through neural activation.'
       ),
-      image: mainli1,
+      image: mainliCover,
       images: [mainli1, mainli2, mainli3, mainli4, mainli5, mainli6, mainli7, mainli8, mainli9, mainli10],
     },
     {
